@@ -11,7 +11,7 @@ import Show from './streams/Show';
 
 export default function App() {
   return (
-    <div className='ui container'>
+    <div className='ui container' style={{ margin: '10px' }}>
       <BrowserRouter>
         <div>
           <Header />
