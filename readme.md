@@ -1,4 +1,4 @@
-# Twitch Colne App with react redux and Google Auth
+# Twitch Clone App with react redux and Google Auth
 
 Google API call - `https://apis.google.com/js/api.js`
 
