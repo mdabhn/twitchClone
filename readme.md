@@ -18,3 +18,7 @@ Notes -
             });
         });
       }
+
+In redux dev tool -
+
+we can use `localhost:3000/?degug_session=something` and it will store all the previous action that we have done in the dev tool
