@@ -22,4 +22,48 @@ const createStream = (formValues) => async (dispatch) => {
   });
 };
 
-export { sign_in, sign_out, createStream };
+const getStreams = () => async (dispatch) => {
+  const response = await api.get('/streams');
+
+  dispatch({
+    type: 'GET_STREAMS',
+    payload: response.data,
+  });
+};
+
+const getStream = (id) => async (dispatch) => {
+  const response = await api.get(`/streams/${id}`);
+
+  dispatch({
+    type: 'GET_STREAM',
+    payload: response.data,
+  });
+};
+
+const updateStream = (id, formValues) => async (dispatch) => {
+  const response = await api.put(`/streams/${id}`, formValues);
+
+  dispatch({
+    type: 'UPDATE_STREAM',
+    payload: response.data,
+  });
+};
+
+const deleteStream = (id) => async (dispatch) => {
+  await api.delete(`/streams/${id}`);
+
+  dispatch({
+    type: 'DELETE_STREAM',
+    payload: id,
+  });
+};
+
+export {
+  sign_in,
+  sign_out,
+  createStream,
+  getStreams,
+  getStream,
+  updateStream,
+  deleteStream,
+};
